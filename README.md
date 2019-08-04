@@ -41,7 +41,7 @@ openat(AT_FDCWD, "./config_file", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file 
 
 openat(AT_FDCWD, "./config_file", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
 
-As you can see above strace shows clearly the bug. The app is trying to open a file continuously that does not exist on the system.
+As you can see above, strace clearly shows the bug. The app is trying to open a file continuously that does not exist on the system.
 
 In a production environment you won't have the buggy app's source code on the system to debug. You will just have a binary executable. Even if you did have the source code it may be too long for you to debug in an outage situation where time is money. Instead you can use strace to see what is happening under the hood quickly and easily.
 

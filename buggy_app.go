@@ -7,7 +7,9 @@ func main() {
 		file, err := os.Open("./config_file")
 		if err != nil {
 			continue
+		} else {
+			file.Close()
+			break
 		}
-		file.Close()	
 	}
 }
